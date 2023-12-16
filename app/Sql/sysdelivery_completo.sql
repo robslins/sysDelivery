@@ -1,3 +1,8 @@
+DROP DATABASE IF EXISTS sysdelivery;
+CREATE DATABASE IF NOT EXISTS sysdelivery;
+
+use sysdelivery;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
@@ -28,7 +33,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categorias` (
-  `categorias_id` int(11) NOT NULL,
+  `categorias_id` int NOT NULL,
   `categorias_nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -47,10 +52,10 @@ INSERT INTO `categorias` (`categorias_id`, `categorias_nome`) VALUES
 --
 
 CREATE TABLE `imgprodutos` (
-  `imgprodutos_id` int(11) NOT NULL,
+  `imgprodutos_id` int NOT NULL,
   `imgprodutos_link` varchar(255) NOT NULL,
   `imgprodutos_descricao` varchar(255) NOT NULL,
-  `imgprodutos_produtos_id` int(11) NOT NULL
+  `imgprodutos_produtos_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -69,12 +74,12 @@ INSERT INTO `imgprodutos` (`imgprodutos_id`, `imgprodutos_link`, `imgprodutos_de
 --
 
 CREATE TABLE `produtos` (
-  `produtos_id` int(11) NOT NULL,
+  `produtos_id` int NOT NULL,
   `produtos_nome` varchar(255) NOT NULL,
   `produtos_descricao` text NOT NULL,
-  `produtos_preco_custo` float(9,2) NOT NULL,
-  `produtos_preco_venda` float(9,2) NOT NULL,
-  `produtos_categorias_id` int(11) NOT NULL
+  `produtos_preco_custo` float NOT NULL,
+  `produtos_preco_venda` float NOT NULL,
+  `produtos_categorias_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -93,7 +98,7 @@ INSERT INTO `produtos` (`produtos_id`, `produtos_nome`, `produtos_descricao`, `p
 --
 
 CREATE TABLE `usuarios` (
-  `usuarios_id` int(11) NOT NULL,
+  `usuarios_id` int NOT NULL,
   `usuarios_nome` varchar(255) NOT NULL,
   `usuarios_sobrenome` varchar(255) NOT NULL,
   `usuarios_cpf` varchar(14) NOT NULL,
@@ -101,7 +106,7 @@ CREATE TABLE `usuarios` (
   `usuarios_senha` varchar(32) NOT NULL,
   `usuarios_data_nasc` date NOT NULL,
   `usuarios_fone` varchar(15) NOT NULL,
-  `usuarios_nivel` int(11) NOT NULL,
+  `usuarios_nivel` int NOT NULL,
   `usuarios_data_cadastro` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -151,25 +156,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `categorias_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `categorias_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `imgprodutos`
 --
 ALTER TABLE `imgprodutos`
-  MODIFY `imgprodutos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `imgprodutos_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `produtos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `produtos_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuarios_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `usuarios_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas
