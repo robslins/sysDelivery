@@ -29,6 +29,8 @@ class Categorias extends BaseController
         ];
         return view('Categorias/form',$data);
     }
+
+    
     public function create()
     {
 

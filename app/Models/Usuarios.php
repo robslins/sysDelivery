@@ -48,4 +48,6 @@ class Usuarios extends Model
     // protected $afterFind      = [];
     // protected $beforeDelete   = [];
     // protected $afterDelete    = [];
+
+    // método para buscar um usuario e seus endereços.
 }

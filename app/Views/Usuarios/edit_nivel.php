@@ -10,7 +10,7 @@
 <?= $this->section('content') ?>
 
 
-<div class="container pt-4 pb-5 bg-light">
+<div class="container mt-5 pt-4 pb-5 bg-light">
 
     <?php if(isset($msg)){echo $msg;} ?>
 
@@ -20,7 +20,7 @@
 
     <form action="<?= base_url('usuarios/salvar_nivel'); ?>" method="post">
 
-       <!-- select usuário -->
+        <!-- select usuário -->
         <div class="mb-3">
             <label for="usuarios_id" class="form-label"> Usuario </label>
             <select class="form-control" name="usuarios_id" id="usuarios_id">
@@ -39,12 +39,12 @@
 
             </select>
         </div>
-        
+
         <!-- select nivel -->
         <div class="mb-3">
             <label for="usuarios_nivel" class="form-label"> Nivel </label>
             <select class="form-control" name="usuarios_nivel" id="usuarios_nivel">
-            <?php 
+                <?php 
                     for($i=0; $i < count($nivel);$i++){ 
                         $selected = '';
                         if($login->usuarios_nivel == $nivel[$i]['id']){

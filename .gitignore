@@ -128,3 +128,4 @@ nb-configuration.xml
 
 # Docs
 /app/sql
+/bootstrap*
